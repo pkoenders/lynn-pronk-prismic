@@ -73,9 +73,9 @@ const GalleryItem = ({ currentLang, itemData }) => {
                     <span className="detail">
                       <IconMaterial icon={'crop'} />
                       <p>
-                        {width} cm
+                        Width {width} cm
                         <strong> &nbsp;x&nbsp; </strong>
-                        {height} cm
+                        Height {height} cm
                       </p>
                     </span>
                   </>
