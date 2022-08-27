@@ -69,7 +69,7 @@ const Footer = ({ currentLang, currentPrefix }) => {
         <ScrollToTop />
         <p>
           {/* © {new Date().getFullYear()} - {i18n[currentLang].siteTitle} */}©{' '}
-          {new Date().getFullYear()} — Peter Koenders
+          {new Date().getFullYear()} — Lynn Pronk
         </p>
         <Link
           to={currentPrefix === '/' ? currentPrefix : `${currentPrefix}/`}
