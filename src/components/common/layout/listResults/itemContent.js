@@ -19,6 +19,7 @@ const ItemContent = styled.article`
   .imageWrapper {
     position: relative;
     border-bottom: 1px solid ${({ theme }) => theme.colors.card[300]};
+    background-color: ${({ theme }) => theme.colors.card[100]};
     aspect-ratio: auto;
     img {
       transition: ${({ theme }) => theme.transition.easeIn.default};
@@ -48,6 +49,8 @@ const ItemContent = styled.article`
     color: ${({ theme }) => theme.colors.page.default};
     padding: ${({ theme }) => theme.padding['1/2']};
     flex-grow: 1;
+    
+
 
     .title {
       font-family: ${({ theme }) => theme.font.sans};
@@ -70,6 +73,16 @@ const ItemContent = styled.article`
         margin-left: auto;
         margin-top: ${({ theme }) => theme.margin['1/4']};
       }
+    }
+
+    .intro {
+      overflow: hidden;
+  /* white-space: nowrap; */
+    display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  
     }
 
     p {
@@ -240,8 +253,9 @@ const ItemContent = styled.article`
       display: flex;
       align-items: flex-start;
       /* padding: ${({ theme }) => theme.margin['1/2']}; */
-      background-color: ${({ theme }) => theme.colors.card[200]};
-      width: 20%;
+      /* background-color: ${({ theme }) => theme.colors.card[200]}; */
+      width: 25%;
+      /* flex-grow: 3; */
       /* height: 100%; */
       aspect-ratio: auto;
       /* aspect-ratio: 3 / 4; */
@@ -261,8 +275,9 @@ const ItemContent = styled.article`
       }
     }
     .content {
-      width: 66%;
-      border-left: 1px solid ${({ theme }) => theme.colors.card[300]};
+      width: 75%;
+       /* flex-grow: 1; */
+      /* border-left: 1px solid ${({ theme }) => theme.colors.card[300]}; */
       @media (max-width: ${({ theme }) => theme.screens.sm}) {
         width: 100%;
         border: none;

@@ -125,11 +125,14 @@ export const query = graphql`
                             fm: "jpg, avif, webp"
                             nr: 100
                             dpr: 2
-                            auto: "compress,enhance,format"
+                            auto: "compress,format"
                           }
                         )
                       }
                       intro
+                      description {
+                        text
+                      }
                       creation_date(formatString: "YYYY")
                     }
                     id

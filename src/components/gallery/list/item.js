@@ -41,8 +41,10 @@ const GalleryItem = ({ listStyle, thisItem, index, listLength, animateScroll }) 
 
   const item = thisItem.item.document
   const content = thisItem.item.document.data
+
   const title = content.title.text
   const intro = content.intro
+
   const date = content.creation_date
   var tagData = thisItem.item.document.tags
 
@@ -85,7 +87,7 @@ const GalleryItem = ({ listStyle, thisItem, index, listLength, animateScroll }) 
                     <IconMaterial icon={'arrow_forward'} />
                   </h2>
                 )}
-                {intro && <p>{intro}</p>}
+                {intro && <p className="intro">{intro}</p>}
 
                 {tagData && <Tags tagData={tagData} />}
                 {date && <time>{date}</time>}

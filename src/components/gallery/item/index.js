@@ -57,29 +57,28 @@ const GalleryItem = ({ currentLang, itemData }) => {
 
               <div className="outTro">
                 {date && (
-                  <>
-                    <p className="sr-only">Year</p>
-                    <span className="detail">
-                      <IconMaterial icon={'calendar_month'} />
-                      <span>
-                        <time>{date}</time>
-                      </span>
+                  <span className="detail">
+                    <span className="sr-only">Year</span>
+                    <IconMaterial icon={'calendar_month'} />
+                    <span>
+                      <time>{date}</time>
                     </span>
-                  </>
+                  </span>
                 )}
-                {width && height && (
-                  <>
-                    <p className="sr-only">Size</p>
-                    <span className="detail">
-                      <IconMaterial icon={'crop'} />
-                      <p>
-                        Width {width} cm
-                        <strong> &nbsp;x&nbsp; </strong>
-                        Height {height} cm
-                      </p>
-                    </span>
-                  </>
-                )}
+
+                <span className="detail">
+                  <IconMaterial icon={'crop'} />
+                  {width && height && (
+                    <p>
+                      <span className="sr-only">Size</span>
+                      <span className="sr-only">Width</span>
+                      {width} cm
+                      <strong> &nbsp;x&nbsp; </strong>
+                      <span className="sr-only">Height</span>
+                      {height} cm
+                    </p>
+                  )}
+                </span>
               </div>
             </div>
             <aside className="galleryImgs">

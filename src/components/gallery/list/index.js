@@ -224,13 +224,14 @@ const GalleryList = ({ currentLang, pageIntro, dataList }) => {
     // Create an array for the filtered that matches the query
     const filteredData = data.filter((data) => {
       // Filter by...
-      const { title, intro } = data.item.document.data
+      const { title, intro, description } = data.item.document.data
       // And filter by tags
       const { tags } = data.item.document
 
       return (
         title.text.toLowerCase().includes(query.toLowerCase()) ||
         (intro !== null && intro.toLowerCase().includes(query.toLowerCase())) ||
+        (description !== null && description.text.toLowerCase().includes(query.toLowerCase())) ||
         (tags && tags.join(' ').toLowerCase().includes(query.toLowerCase()))
       )
     })
