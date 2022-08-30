@@ -32,7 +32,7 @@ export const themeBase = {
     sans: '"Roboto Flex"',
     serif: 'Merriweather, serif',
     // slab: 'Rokkitt, serif',
-    headers: 'Bitter, serif',
+    headers: 'Arvo, serif',
     mono: 'Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
   },
 
