@@ -30,7 +30,7 @@ const ArrowBtn = styled.button.attrs((props) => ({
 
   i {
     font-weight: 600;
-    color: ${({ theme }) => theme.colors.page.default};
+    color: ${({ theme }) => theme.colors.pageHold.default};
   }
 `
 const NavArrow = (props) => {

@@ -57,7 +57,7 @@ const TextBlock = styled.section`
     width: fit-content;
     align-items: center;
     justify-content: left;
-    grid-gap: ${({ theme }) => theme.padding['1/2']};
+    grid-gap: ${({ theme }) => theme.padding.default};
 
     span {
       width: fit-content;
@@ -67,6 +67,7 @@ const TextBlock = styled.section`
     @media (max-width: ${({ theme }) => theme.screens.sm}) {
       flex-direction: column;
       align-items: flex-start;
+      grid-gap: ${({ theme }) => theme.padding['1/2']};
       margin-top: ${({ theme }) => theme.margin.default};
       span {
         margin: 0;

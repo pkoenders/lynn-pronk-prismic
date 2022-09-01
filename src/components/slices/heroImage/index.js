@@ -294,19 +294,25 @@ const HeroImg = ({ slice }) => {
     function setHeroImageStyles() {
       contentHeight = contentHeight + 32 * 2 // Allow for top and bottom margins
       var heroImageInner = document.querySelector('.heroImage')
+      // var heroImageInnerAfter = window.getComputedStyle(heroImageInner, ':after')
 
       if (heroImageInner) {
         heroImageInner.setAttribute(
           `style`,
           `background-image: linear-gradient(${overlayDirection}, rgba(${overlayFrom}), rgba(${overlayTo}));
-        min-height: ${sectionHeight};
-        height: ${contentHeight}px;
-        width: 100%; 
-        background-position: center ${alignBGround};
-        margin-top: ${vMarginTop};
-        margin-bottom: ${vMarginBottom}
+          min-height: ${sectionHeight};
+          height: ${contentHeight}px;
+          width: 100%; 
+          margin-top: ${vMarginTop};
+          margin-bottom: ${vMarginBottom}
         `
         )
+
+        // heroImageInnerAfter.setAttribute(
+        //   `style`,
+        //   `background-position: center ${alignBGround};
+        // `
+        // )
       }
     }
     // Done
@@ -382,14 +388,17 @@ const HeroImg = ({ slice }) => {
             // Spread bgImage into BackgroundImage:
             {...bgImage}
             preserveStackingContext
+            style={{
+              backgroundPosition: `center ${alignBGround}`,
+            }}
           />
         )}
 
-        <div
-          className={'contentWrapper ' + `${slice.primary.vertical_align_content}`.toLowerCase()}
-        >
-          <div className={'content ' + `${slice.primary.align_content}`.toLowerCase()}>
-            {(title || description || leadImage) && (
+        {(title || description || leadImage) && (
+          <div
+            className={'contentWrapper ' + `${slice.primary.vertical_align_content}`.toLowerCase()}
+          >
+            <div className={'content ' + `${slice.primary.align_content}`.toLowerCase()}>
               <span>
                 {leadImage && (
                   <GatsbyImage
@@ -414,35 +423,35 @@ const HeroImg = ({ slice }) => {
                   <RichText render={description} linkResolver={linkResolver} />
                 )}
               </span>
-            )}
 
-            {(primaryButtonLabel || secondaryButtonLabel) && (
-              <span className="cta">
-                {/* Primary Button */}
-                {primaryButtonLabel && (
-                  <Button
-                    buttonLabel={primaryButtonLabel}
-                    buttonType={primaryButtonLink}
-                    buttonStyle={primaryButtonStyle}
-                    buttonIcon={primaryButtonIcon}
-                    buttonIconAlign={primaryButtonIconAlign}
-                  />
-                )}
+              {(primaryButtonLabel || secondaryButtonLabel) && (
+                <span className="cta">
+                  {/* Primary Button */}
+                  {primaryButtonLabel && (
+                    <Button
+                      buttonLabel={primaryButtonLabel}
+                      buttonType={primaryButtonLink}
+                      buttonStyle={primaryButtonStyle}
+                      buttonIcon={primaryButtonIcon}
+                      buttonIconAlign={primaryButtonIconAlign}
+                    />
+                  )}
 
-                {/* Secondary Button */}
-                {secondaryButtonLabel && (
-                  <Button
-                    buttonLabel={secondaryButtonLabel}
-                    buttonType={secondaryButtonLink}
-                    buttonStyle={secondaryButtonStyle}
-                    buttonIcon={secondaryButtonIcon}
-                    buttonIconAlign={secondaryButtonIconAlign}
-                  />
-                )}
-              </span>
-            )}
+                  {/* Secondary Button */}
+                  {secondaryButtonLabel && (
+                    <Button
+                      buttonLabel={secondaryButtonLabel}
+                      buttonType={secondaryButtonLink}
+                      buttonStyle={secondaryButtonStyle}
+                      buttonIcon={secondaryButtonIcon}
+                      buttonIconAlign={secondaryButtonIconAlign}
+                    />
+                  )}
+                </span>
+              )}
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </HeroImage>
   )

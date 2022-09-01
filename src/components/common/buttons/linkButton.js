@@ -34,7 +34,7 @@ const BtnWrapper = styled.span`
     text-align: center;
     text-decoration: none !important;
     font-variation-settings: 'GRAD' 0;
-    /* font-weight: 600; */
+    font-weight: 500;
     font-family: inherit;
     line-height: initial;
 
