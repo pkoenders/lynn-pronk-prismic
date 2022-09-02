@@ -1020,7 +1020,7 @@ class Header extends Component {
 
           {/* // Activate locale */}
           {/* <LocaleSwitcher currentLang={currentLang} currentPath={currentPath} /> */}
-          <ThemeSwitcher changeTheme={this.props.changeTheme} lightTheme={this.props.lightTheme} />
+          <ThemeSwitcher changeTheme={this.props.changeTheme} currTheme={this.props.currTheme} />
         </nav>
       </HeaderWrapper>
     )
