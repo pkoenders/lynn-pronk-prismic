@@ -127,7 +127,7 @@ class Layout extends React.Component {
             currentPath={currentPath}
             primaryNav={primaryNav}
             changeTheme={this.changeTheme}
-            currTheme={localStorage.getItem('storedTheme')}
+            currTheme={isLightTheme}
           />
 
           <div className="layoutInner">
