@@ -112,10 +112,8 @@ class Layout extends React.Component {
       return path
     }
 
-    const isLightTheme = localStorage.getItem('storedTheme') === 'light'
-
     return (
-      <ThemeProvider theme={isLightTheme ? light : dark}>
+      <ThemeProvider theme={localStorage.getItem('storedTheme') === 'light' ? light : dark}>
         <GlobalStyles />
         <LayoutWrapper>
           <Header
