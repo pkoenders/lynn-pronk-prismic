@@ -922,7 +922,7 @@ class Header extends Component {
               //console.log(navItem.link)
               return (
                 <li key={`main-nav-${index}`}>
-                  {navItem.primary.link.uid ? (
+                  {navItem.primary.link.uid || navItem.primary.link.raw.url ? (
                     navItem.primary.link.uid !== null ? (
                       <Link
                         to={linkResolver(navItem.primary.link)}
@@ -937,9 +937,7 @@ class Header extends Component {
                     ) : (
                       <a
                         href={
-                          navItem.primary.link.raw.url !== undefined
-                            ? navItem.primary.link.raw.url
-                            : ''
+                          navItem.primary.link.raw.url !== null ? navItem.primary.link.raw.url : ''
                         }
                         className="l1"
                         getProps={

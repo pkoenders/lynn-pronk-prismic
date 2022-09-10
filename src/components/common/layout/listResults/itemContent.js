@@ -4,7 +4,7 @@ const ItemContent = styled.article`
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  flex-grow: 1
+  flex-grow: 1;
   height: 100%;
   color: ${({ theme }) => theme.colors.textColor};
   background-color: ${({ theme }) => theme.colors.card[100]};
@@ -66,8 +66,8 @@ const ItemContent = styled.article`
       i {
         color: inherit;
         /* color: ${({ theme }) => theme.colors.accent.default}; */
-               /* color: ${({ theme }) => theme.colors.primary.default}; */
-               color: inherit;
+        /* color: ${({ theme }) => theme.colors.primary.default}; */
+        color: inherit;
 
         position: inherit;
         transition: ${({ theme }) => theme.transition.easeIn.default};
@@ -79,7 +79,7 @@ const ItemContent = styled.article`
 
     .intro {
       overflow: hidden;
-  /* white-space: nowrap; */
+      /* white-space: nowrap; */
       display: -webkit-box;
       -webkit-line-clamp: 1;
       -webkit-box-orient: vertical;
@@ -100,16 +100,12 @@ const ItemContent = styled.article`
   }
 
   .content:hover {
-    .title{
-      i{
+    .title {
+      i {
         color: ${({ theme }) => theme.colors.primary.default};
       }
     }
-
   }
-
-
-  
 
   .details {
     display: flex;
@@ -187,7 +183,7 @@ const ItemContent = styled.article`
           right: -${({ theme }) => theme.padding['1/8']};
           transition: ${({ theme }) => theme.transition.easeOut.default};
           /* color: ${({ theme }) => theme.colors.accent.default}; */
-           /* color: ${({ theme }) => theme.colors.primary.default}; */
+          /* color: ${({ theme }) => theme.colors.primary.default}; */
         }
       }
     }
@@ -219,7 +215,7 @@ const ItemContent = styled.article`
     .imageWrapper {
       cursor: zoom-in;
       .openLightBox {
-         transform: scale(1.25);
+        transform: scale(1.25);
         display: flex;
         pointer-events: none;
         align-items: center;
@@ -232,15 +228,15 @@ const ItemContent = styled.article`
         border-radius: ${({ theme }) => theme.borderRadius.sm};
         border: 1px solid ${({ theme }) => theme.colors.card[800]};
         /* border: 1px solid transparent; */
-       
+
         /* background-color: ${({ theme }) => theme.colors.accent.default}; */
-       
-         background-color: ${({ theme }) => theme.colors.card[200]};
-         /* border-color: ${({ theme }) => theme.colors.grey[600]}; */
+
+        background-color: ${({ theme }) => theme.colors.card[200]};
+        /* border-color: ${({ theme }) => theme.colors.grey[600]}; */
         box-shadow: ${({ theme }) => theme.boxShadow.md};
         i {
-          transform: scale(.66);
-           color: ${({ theme }) => theme.colors.page.default};
+          transform: scale(0.66);
+          color: ${({ theme }) => theme.colors.page.default};
           /* color: ${({ theme }) => theme.colors.grey.default}; */
           transition: ${({ theme }) => theme.transition.easeOut.default};
         }
@@ -258,13 +254,13 @@ const ItemContent = styled.article`
     }
     .imageWrapper:hover {
       .openLightBox {
-         /* border: 1px solid ${({ theme }) => theme.colors.primary.default}; */
-          /* bxorder-color: ${({ theme }) => theme.colors.card[800]}; */
-          /* box-shadow: ${({ theme }) => theme.boxShadow.lg}; */
-         i {
-          transform: scale(.77);
-           color: ${({ theme }) => theme.colors.primary.default};
-         }
+        /* border: 1px solid ${({ theme }) => theme.colors.primary.default}; */
+        /* bxorder-color: ${({ theme }) => theme.colors.card[800]}; */
+        /* box-shadow: ${({ theme }) => theme.boxShadow.lg}; */
+        i {
+          transform: scale(0.77);
+          color: ${({ theme }) => theme.colors.primary.default};
+        }
       }
     }
   }
@@ -303,7 +299,7 @@ const ItemContent = styled.article`
     .content {
       width: 75%;
       /* padding: ${({ theme }) => theme.padding['1/2']} ${({ theme }) => theme.padding.default}; */
-       /* flex-grow: 1; */
+      /* flex-grow: 1; */
       /* border-left: 1px solid ${({ theme }) => theme.colors.card[300]}; */
       @media (max-width: ${({ theme }) => theme.screens.sm}) {
         width: 100%;
@@ -385,7 +381,6 @@ const ItemContent = styled.article`
 
     .content {
       justify-content: center;
-      
     }
   }
 
