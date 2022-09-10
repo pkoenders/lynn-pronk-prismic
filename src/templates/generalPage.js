@@ -300,6 +300,7 @@ export const query = graphql`
                   imgixParams: {
                     q: 100
                     fit: "facearea"
+                    minW: 320
                     faces: 2
                     facepad: 10
                     fm: "jpg, avif, webp"
