@@ -305,6 +305,7 @@ export const query = graphql`
                     q: 100
                     fit: "facearea"
                     minW: 320
+                    maxW: 575
                     faces: 2
                     facepad: 10
                     fm: "jpg, avif, webp"
