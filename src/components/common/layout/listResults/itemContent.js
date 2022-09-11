@@ -6,6 +6,7 @@ const ItemContent = styled.article`
   flex-direction: column;
   flex-grow: 1;
   height: 100%;
+
   color: ${({ theme }) => theme.colors.textColor};
   background-color: ${({ theme }) => theme.colors.card[100]};
   border: 1px solid ${({ theme }) => theme.colors.card[200]};

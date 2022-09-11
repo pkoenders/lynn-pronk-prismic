@@ -27,7 +27,7 @@ const HTMLHeader = ({ currentLang }) => (
             rel="stylesheet"
           />
           <link
-            href="https://fonts.googleapis.com/css2?family=Arvo&family=Merriweather&family=Roboto+Flex:opsz,wght,GRAD@8..144,300,0;8..144,400,100;8..144,500,0;8..144,600,0&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Arvo&family=Merriweather&family=Roboto+Flex:opsz,wght,GRAD@8..144,300,0;8..144,400,100;8..144,500,0;8..144,600,0;8..144,700,0&display=swap"
             rel="stylesheet"
           />
         </Helmet>

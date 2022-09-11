@@ -290,7 +290,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   strong {
-    font-weight: ${({ theme }) => theme.fontWeight.semibold};
+    font-weight: ${({ theme }) => theme.fontWeight.bold};
   }
  
 
