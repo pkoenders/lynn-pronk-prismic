@@ -299,16 +299,17 @@ export const query = graphql`
                   placeholder: BLURRED
                   imgixParams: {
                     q: 100
-                    fit: "facearea,crop"
-                    minW: 320
+                    fit: "faces, crop"
+                    minW: 96
                     maxW: 575
-                    faces: 2
+                    faces: 3
                     facepad: 10
                     fm: "jpg, avif, webp"
                     nr: 0
                     nrs: 50
                     dpr: 2
                     auto: "compress,enhance,format"
+                    trim: "auto"
                   }
                 )
               }

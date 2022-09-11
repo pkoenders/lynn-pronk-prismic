@@ -305,14 +305,15 @@ export const query = graphql`
                     q: 100
                     minW: 320
                     maxW: 575
-                    fit: "facearea,crop"
-                    faces: 2
+                    fit: "faces, crop"
+                    faces: 3
                     facepad: 10
                     fm: "jpg, avif, webp"
                     nr: 0
                     nrs: 50
                     dpr: 2
-                    auto: "compress,enhance,format"
+                    auto: "compress, enhance, format"
+                    trim: "auto"
                   }
                 )
               }
