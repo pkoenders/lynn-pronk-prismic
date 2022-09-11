@@ -297,6 +297,8 @@ export const query = graphql`
                   width: 575
                   layout: CONSTRAINED
                   placeholder: BLURRED
+                  outputPixelDensities: [0.5, 1, 2]
+                  breakpoints: [576, 768, 992, 1200, 1366, 1680]
                   imgixParams: {
                     q: 100
                     fit: "faces, crop"
