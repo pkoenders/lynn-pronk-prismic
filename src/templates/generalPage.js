@@ -294,7 +294,6 @@ export const query = graphql`
               image {
                 alt
                 gatsbyImageData(
-                  width: 575
                   layout: CONSTRAINED
                   placeholder: BLURRED
                   imgixParams: {

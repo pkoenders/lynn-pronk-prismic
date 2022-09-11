@@ -52,7 +52,7 @@ const GalleryList = ({ currentLang, pageIntro, dataList }) => {
     currentLayoutStyle = 'list'
   }
   // Initiate layout style - 'list || grid' - default is 'list'
-  const [layoutStyle, updateLayoutStlye] = useState('list')
+  const [layoutStyle, updateLayoutStlye] = useState('grid')
   useEffect(() => {
     currentLayoutStyle !== null
       ? updateLayoutStlye(currentLayoutStyle)

@@ -298,14 +298,13 @@ export const query = graphql`
               image {
                 alt
                 gatsbyImageData(
-                  width: 575
                   layout: CONSTRAINED
                   placeholder: BLURRED
                   imgixParams: {
                     q: 100
-                    fit: "facearea"
                     minW: 320
                     maxW: 575
+                    fit: "facearea"
                     faces: 2
                     facepad: 10
                     fm: "jpg, avif, webp"
