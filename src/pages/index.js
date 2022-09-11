@@ -302,7 +302,7 @@ export const query = graphql`
                   layout: CONSTRAINED
                   placeholder: BLURRED
                   imgixParams: {
-                    q: 100
+                    q: 66
                     minW: 320
                     maxW: 575
                     fit: "faces, crop"
