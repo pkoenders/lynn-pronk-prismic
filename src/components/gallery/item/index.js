@@ -22,7 +22,7 @@ const GalleryItem = ({ currentLang, itemData }) => {
   const date = galleryItem.creation_date
   const width = galleryItem.width
   const height = galleryItem.height
-  const link = galleryItem.link.url
+  // const link = galleryItem.link.url
   // const intro = validateString(galleryItem.intro.text)
 
   const content = validateString(galleryItem.description.richText)
@@ -66,9 +66,9 @@ const GalleryItem = ({ currentLang, itemData }) => {
                   </span>
                 )}
 
-                <span className="detail">
-                  <IconMaterial icon={'crop'} />
-                  {width && height && (
+                {width && height && (
+                  <span className="detail">
+                    <IconMaterial icon={'crop'} />
                     <p>
                       <span className="sr-only">Size</span>
                       <span className="sr-only">Width</span>
@@ -77,8 +77,8 @@ const GalleryItem = ({ currentLang, itemData }) => {
                       <span className="sr-only">Height</span>
                       {height} cm
                     </p>
-                  )}
-                </span>
+                  </span>
+                )}
               </div>
             </div>
             <aside className="galleryImgs">
