@@ -46,7 +46,7 @@ const GalleryItemTemplate = ({ data, pageContext }) => {
         nextTitle={nextTitle}
         previous={previous}
         previousTitle={previousTitle}
-      />{' '}
+      />
       <GalleryItem itemData={document} />
     </Layout>
   )
@@ -191,58 +191,46 @@ export const query = graphql`
                 slice_type
               }
             }
-
             #Template data - ends
 
-            #SEO Start
+            #SEO start
             body {
-              ... on PrismicGalleryItemDataBodyGeneralSeoCard {
+              ... on PrismicGalleryItemDataBodySeoTags {
                 primary {
-                  description {
+                  no_index
+                  ##General SEO
+                  seo_title {
                     text
                   }
-                  title {
+                  seo_description {
                     text
                   }
-                  image {
+                  seo_image {
                     url
                   }
-                }
-                slice_type
-              }
 
-              ... on PrismicGalleryItemDataBodyOpenGraph {
-                primary {
-                  availability
-                  currency
-                  description {
+                  ##OpenGraph
+                  include_opengraph
+                  opengraph_title {
                     text
                   }
-                  image {
-                    url
-                  }
-                  price
-                  title {
+                  opengraph_description {
                     text
                   }
-                  type
-                }
-                slice_type
-              }
-
-              ... on PrismicGalleryItemDataBodyTwitterCard {
-                primary {
-                  description {
+                  opengraph_type
+                  opengraph_price
+                  opengraph_currency
+                  opengraph_availability
+                  ##Twittter
+                  include_twitter
+                  twitter_title {
                     text
                   }
-                  image {
-                    url
+                  twitter_description {
+                    text
                   }
-                  card_type
                   twitter_handle
-                  title {
-                    text
-                  }
+                  twitter_type
                 }
                 slice_type
               }

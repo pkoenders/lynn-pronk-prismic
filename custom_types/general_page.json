@@ -1429,163 +1429,126 @@
       "config": {
         "labels": {},
         "choices": {
-          "general_seo_card": {
+          "seo_tags": {
             "type": "Slice",
-            "fieldset": "General SEO Card",
-            "description": "General SEO fields, Title, Description and Image.",
-            "icon": "art_track",
+            "fieldset": "Seo tags",
+            "description": "Seo tags",
+            "icon": "search",
             "non-repeat": {
               "no_index": {
                 "type": "Boolean",
                 "config": {
-                  "placeholder_true": "true",
                   "default_value": false,
                   "label": "No index"
                 }
               },
-              "title": {
+              "seo_title": {
                 "type": "StructuredText",
                 "config": {
                   "single": "heading1",
-                  "label": "Title",
-                  "placeholder": "Title..."
+                  "label": "Title"
                 }
               },
-              "description": {
+              "seo_description": {
                 "type": "StructuredText",
                 "config": {
                   "single": "paragraph",
-                  "label": "Description",
-                  "placeholder": "Description..."
+                  "label": "Description"
                 }
               },
-              "image": {
-                "type": "Image",
-                "config": {
-                  "constraint": {
-                    "width": 1200,
-                    "height": 650
-                  },
-                  "thumbnails": [],
-                  "label": "Image"
-                }
-              }
-            },
-            "repeat": {}
-          },
-          "open_graph": {
-            "type": "Slice",
-            "fieldset": "Open Graph",
-            "description": "Open Graph SEO fields",
-            "icon": "loyalty",
-            "non-repeat": {
-              "title": {
-                "type": "StructuredText",
-                "config": {
-                  "single": "heading1",
-                  "label": "Title",
-                  "placeholder": "Title..."
-                }
-              },
-              "type": {
-                "type": "Select",
-                "config": {
-                  "options": ["Article", "Product", "Recipe"],
-                  "label": "Type",
-                  "placeholder": "Please select"
-                }
-              },
-              "description": {
-                "type": "StructuredText",
-                "config": {
-                  "single": "paragraph",
-                  "label": "Description",
-                  "placeholder": "Description..."
-                }
-              },
-              "price": {
-                "type": "Number",
-                "config": {
-                  "label": "Price",
-                  "placeholder": "Enter Product Price..."
-                }
-              },
-              "currency": {
-                "type": "Select",
-                "config": {
-                  "options": ["NZD", "USD", "Euro"],
-                  "label": "Currency"
-                }
-              },
-              "availability": {
-                "type": "Select",
-                "config": {
-                  "options": ["In-stock", "Out of stock"],
-                  "label": "Availability"
-                }
-              },
-              "image": {
+              "seo_image": {
                 "type": "Image",
                 "config": {
                   "constraint": {},
                   "thumbnails": [],
                   "label": "Image"
                 }
-              }
-            },
-            "repeat": {}
-          },
-          "twitter_card": {
-            "type": "Slice",
-            "fieldset": "Twitter Card",
-            "description": "Twitter summary card with image",
-            "icon": "subtitles",
-            "non-repeat": {
-              "card_type": {
+              },
+              "include_opengraph": {
+                "type": "Boolean",
+                "config": {
+                  "placeholder_false": "false",
+                  "default_value": true,
+                  "label": "Include OpenGraph"
+                }
+              },
+              "opengraph_title": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading1",
+                  "label": "OpenGraph title (override default)"
+                }
+              },
+              "opengraph_description": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "paragraph",
+                  "label": "OpenGraph description (override default)"
+                }
+              },
+              "opengraph_type": {
                 "type": "Select",
                 "config": {
-                  "options": ["Standard Summary Card", "Summary Card with Large Image"],
-                  "label": "Card type"
+                  "options": ["Article", "Product", "Recipe"],
+                  "default_value": "Article",
+                  "label": "OpenGraph type"
+                }
+              },
+              "opengraph_price": {
+                "type": "Text",
+                "config": {
+                  "label": "OpenGraph price"
+                }
+              },
+              "opengraph_currency": {
+                "type": "Select",
+                "config": {
+                  "options": ["NZ Dollar", "US Dollar", "AU Dollar", "Euro", "British Pound"],
+                  "label": "OpenGraph currency",
+                  "placeholder": "Select"
+                }
+              },
+              "opengraph_availability": {
+                "type": "Select",
+                "config": {
+                  "options": ["In-stock", "Out of stock"],
+                  "label": "OpenGraph availability",
+                  "placeholder": "Select"
+                }
+              },
+              "include_twitter": {
+                "type": "Boolean",
+                "config": {
+                  "default_value": true,
+                  "label": "Include Twitter"
+                }
+              },
+              "twitter_title": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading1",
+                  "label": "Twitter title (override default)"
+                }
+              },
+              "twitter_description": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "paragraph",
+                  "label": "Twitter description (override default)"
                 }
               },
               "twitter_handle": {
                 "type": "Text",
                 "config": {
-                  "label": "Twitter Handle",
-                  "placeholder": "Twitter handle..."
+                  "label": "Twitter handle"
                 }
               },
-              "title": {
-                "type": "StructuredText",
+              "twitter_type": {
+                "type": "Select",
                 "config": {
-                  "single": "paragraph",
-                  "label": "Title",
-                  "placeholder": "Twitter Card Title..."
-                }
-              },
-              "description": {
-                "type": "StructuredText",
-                "config": {
-                  "single": "paragraph",
-                  "label": "Description",
-                  "placeholder": "Twitter Card Description..."
-                }
-              },
-              "image": {
-                "type": "Image",
-                "config": {
-                  "constraint": {
-                    "width": 300,
-                    "height": 300
-                  },
-                  "thumbnails": [
-                    {
-                      "name": "large_image",
-                      "width": 600,
-                      "height": 314
-                    }
-                  ],
-                  "label": "Image"
+                  "options": ["Summary Card with Large Image", "Standard Summary Card"],
+                  "default_value": "Summary Card with Large Image",
+                  "label": "Twitter card type"
                 }
               }
             },

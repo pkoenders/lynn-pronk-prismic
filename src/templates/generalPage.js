@@ -674,55 +674,44 @@ export const query = graphql`
         ## Page data - ends
 
         ##
-        ## SEO Start
+        #SEO start
         body1 {
-          ... on PrismicGeneralPageDataBody1GeneralSeoCard {
+          ... on PrismicGeneralPageDataBody1SeoTags {
             primary {
-              description {
+              no_index
+              ##General SEO
+              seo_title {
                 text
               }
-              title {
+              seo_description {
                 text
               }
-              image {
+              seo_image {
                 url
               }
-            }
-            slice_type
-          }
 
-          ... on PrismicGeneralPageDataBody1OpenGraph {
-            primary {
-              availability
-              currency
-              description {
+              ##OpenGraph
+              include_opengraph
+              opengraph_title {
                 text
               }
-              image {
-                url
-              }
-              price
-              title {
+              opengraph_description {
                 text
               }
-              type
-            }
-            slice_type
-          }
-
-          ... on PrismicGeneralPageDataBody1TwitterCard {
-            primary {
-              description {
+              opengraph_type
+              opengraph_price
+              opengraph_currency
+              opengraph_availability
+              ##Twittter
+              include_twitter
+              twitter_title {
                 text
               }
-              image {
-                url
+              twitter_description {
+                text
               }
-              card_type
               twitter_handle
-              title {
-                text
-              }
+              twitter_type
             }
             slice_type
           }

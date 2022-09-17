@@ -88,7 +88,7 @@
       "type": "Slices",
       "fieldset": "Slice zone",
       "config": {
-        "labels": {},
+        "labels": null,
         "choices": {
           "general_seo_card": {
             "type": "Slice",
@@ -239,6 +239,96 @@
                     }
                   ],
                   "label": "Image"
+                }
+              }
+            },
+            "repeat": {}
+          },
+          "seo_tags": {
+            "type": "Slice",
+            "fieldset": "Seo tags",
+            "description": "Seo tags",
+            "icon": "search",
+            "display": "list",
+            "non-repeat": {
+              "title1": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading1",
+                  "label": "Title"
+                }
+              },
+              "description": {
+                "type": "Text",
+                "config": {
+                  "label": "Description"
+                }
+              },
+              "image": {
+                "type": "Image",
+                "config": {
+                  "constraint": {},
+                  "thumbnails": [],
+                  "label": "Image"
+                }
+              },
+              "include_opengraph": {
+                "type": "Boolean",
+                "config": {
+                  "placeholder_false": "false",
+                  "default_value": true,
+                  "label": "Include OpenGraph"
+                }
+              },
+              "opengraph_type": {
+                "type": "Select",
+                "config": {
+                  "options": ["Article", "Product", "Recipe"],
+                  "default_value": "Article",
+                  "label": "OpenGraph type"
+                }
+              },
+              "price": {
+                "type": "Text",
+                "config": {
+                  "label": "Price"
+                }
+              },
+              "currency": {
+                "type": "Select",
+                "config": {
+                  "options": ["NZ Dollar", "US Dollar", "AU Dollar", "Euro", "British Pound"],
+                  "label": "Currency",
+                  "placeholder": "Select"
+                }
+              },
+              "availability": {
+                "type": "Select",
+                "config": {
+                  "options": ["In-stock", "Out of stock"],
+                  "label": "Availability",
+                  "placeholder": "Select"
+                }
+              },
+              "include_twitter": {
+                "type": "Boolean",
+                "config": {
+                  "default_value": true,
+                  "label": "Include Twitter"
+                }
+              },
+              "twitter_handle": {
+                "type": "Text",
+                "config": {
+                  "label": "Twitter handle"
+                }
+              },
+              "twitter_type": {
+                "type": "Select",
+                "config": {
+                  "options": ["Summary Card with Large Image", "Standard Summary Card"],
+                  "default_value": "Summary Card with Large Image",
+                  "label": "Twitter card type"
                 }
               }
             },
