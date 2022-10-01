@@ -34,7 +34,9 @@ const FormWraper = styled.div`
 
   input:-internal-autofill-selected,
   textarea:-internal-autofill-selected {
-    box-shadow: 0 0 0px 1000px ${({ theme }) => theme.colors.card[100]} inset;
+    /* background-color: #ffffff;
+    box-shadow: 0 0 0px 1000px ${({ theme }) => theme.colors.card[100]} inset; */
+    box-shadow: 0 0 0px 1000px #fff inset;
     /* background-color: ${({ theme }) => theme.colors.grey[500]} !important;
     background-image: none !important; */
   }
