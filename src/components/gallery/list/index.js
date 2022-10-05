@@ -37,7 +37,15 @@ const GalleryList = ({ currentLang, pageIntro, dataList }) => {
     _.sortBy(dataList.items, 'item.document.data.creation_date').reverse()
   )
 
-  let [allPosts, setAllPosts] = useState(dataList.items)
+  // State for the list
+  // const [list, setList] = useState([...allNews.slice(0, 10)])
+  // let [allPosts, setAllPosts] = useState(dataList.items)
+  const allData = dataList.items
+  // let [allPosts, setAllPosts] = useState([...allData.slice(0, 10)])
+
+  let [allPosts, setAllPosts] = useState([...allData])
+  // console.log('allPosts = ' + allPosts)
+
   let [queryValue, setQueryValue] = useState('')
   let [queryLength, setQueryLength] = useState(0)
   const [ascDesc, setAscDescSort] = useState(true) // false for Acs. true for Desc
@@ -51,6 +59,38 @@ const GalleryList = ({ currentLang, pageIntro, dataList }) => {
   } else {
     currentLayoutStyle = 'list'
   }
+
+  // State to trigger load more
+  const [loadMore, setLoadMore] = useState(false)
+
+  // State of whether there is more to load
+  const [hasMore, setHasMore] = useState(allData.length > 10)
+
+  // Load more button click
+  const handleLoadMore = () => {
+    setLoadMore(true)
+    // console.log('load more')
+  }
+
+  // Handle loading more articles
+  useEffect(() => {
+    if (loadMore && hasMore) {
+      const currentLength = allPosts.length
+      const isMore = currentLength < allData.length
+      const nextResults = isMore ? allData.slice(currentLength, currentLength + 10) : []
+      setAllPosts([...allPosts, ...nextResults])
+      setLoadMore(false)
+    }
+  }, [loadMore, hasMore]) //eslint-disable-line
+
+  //Check if there is more
+  useEffect(() => {
+    const isMore = allPosts.length < allData.length
+    setHasMore(isMore)
+  }, [allPosts]) //eslint-disable-line
+
+  console.log('allPosts = ' + allPosts.length)
+
   // Initiate layout style - 'list || grid' - default is 'list'
   const [layoutStyle, updateLayoutStlye] = useState('grid')
   useEffect(() => {
@@ -123,8 +163,8 @@ const GalleryList = ({ currentLang, pageIntro, dataList }) => {
         setState({ filteredData: sortPosts })
       } else {
         // Else sort the 'sourceList'
-        sortPosts = _.cloneDeep([...dataList.items])
-        sortPosts = _.sortBy(dataList.items, filterNode)
+        sortPosts = _.cloneDeep([...allData])
+        sortPosts = _.sortBy(allData, filterNode)
 
         // Check filter node - if date - reverse the order for latest first
         filterNode === 'item.document.data.creation_date' && sortPosts.reverse()
@@ -137,11 +177,11 @@ const GalleryList = ({ currentLang, pageIntro, dataList }) => {
       }
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [allPosts, ascDesc]
+    [setAllPosts, ascDesc]
   )
 
   // Get tag data
-  const allItems = dataList.items
+  const allItems = allData
 
   // Tags: Create a tag list of all items
   var tagList = []
@@ -246,10 +286,13 @@ const GalleryList = ({ currentLang, pageIntro, dataList }) => {
     setAllPosts(filteredData)
   }
 
+  // console.log('allPosts = ' + allPosts.length)
+
   // Set state of allPosts. If empty, reset allPosts back to the sourceList
   const { filteredData, query } = state
   const hasSearchResults = filteredData && query !== emptyQuery
-  allPosts = hasSearchResults ? filteredData : sourceList
+  // allPosts = hasSearchResults ? filteredData : sourceList
+  allPosts = hasSearchResults ? filteredData : allPosts
 
   // Done - We can log the results
   // console.log(allPosts)
@@ -393,6 +436,8 @@ const GalleryList = ({ currentLang, pageIntro, dataList }) => {
           ) : (
             <NoResults resetFilters={resetFilters} query={query} />
           )}
+
+          {hasMore ? <button onClick={handleLoadMore}>Load More</button> : <p>No more results</p>}
         </ListWrapper>
       </PageLayout>
     </>
