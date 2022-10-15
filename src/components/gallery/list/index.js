@@ -41,8 +41,10 @@ const GalleryList = ({ currentLang, pageIntro, dataList }) => {
   // const [list, setList] = useState([...allNews.slice(0, 10)])
   // let [allPosts, setAllPosts] = useState(dataList.items)
   const allData = dataList.items
+  // load 10 at a time...
   // let [allPosts, setAllPosts] = useState([...allData.slice(0, 10)])
 
+  // load all..
   let [allPosts, setAllPosts] = useState([...allData])
   // console.log('allPosts = ' + allPosts)
 
@@ -152,6 +154,7 @@ const GalleryList = ({ currentLang, pageIntro, dataList }) => {
       // Has the user entered search txt?
       if (queryLength > 0) {
         // If there is search txt, we get the 'filteredData' array
+
         sortPosts = _.cloneDeep([...filteredData]) // Use deep to ensure state updates?
         sortPosts = _.sortBy(filteredData, filterNode)
 

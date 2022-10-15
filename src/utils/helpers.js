@@ -269,6 +269,9 @@ export function getPostionAlign(align) {
     case 'Centre':
       return 'center'
 
+    case 'Center':
+      return 'center'
+
     case 'Right':
       return 'right'
 

@@ -1270,6 +1270,37 @@
                   "placeholder": "Select one"
                 }
               },
+              "background_colour": {
+                "type": "Select",
+                "config": {
+                  "options": ["Default", "Grey", "Primary", "Secondary", "Tertiary", "Header"],
+                  "default_value": "Default",
+                  "label": "Background colour",
+                  "placeholder": "Select - (optional)"
+                }
+              },
+              "background_tint": {
+                "type": "Select",
+                "config": {
+                  "options": [
+                    "Default",
+                    "100",
+                    "200",
+                    "300",
+                    "400",
+                    "500",
+                    "600",
+                    "700",
+                    "800",
+                    "900",
+                    "1100",
+                    "1200",
+                    "1300"
+                  ],
+                  "default_value": "Default",
+                  "label": "Background tint"
+                }
+              },
               "image": {
                 "type": "Image",
                 "config": {

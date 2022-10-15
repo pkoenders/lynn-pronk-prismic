@@ -14,6 +14,8 @@ import {
   getManualSpacing,
   getOpacity,
   getColor,
+  getBgColor,
+  getColorTint,
   getRgb2Hex,
   getHexToRGB,
   getStyle,
@@ -85,14 +87,17 @@ const HeroImage = styled.section.attrs({
       align-items: center;
     }
 
-    .contentWrapper.bottom {
+    .contentWrapper.bottom,
+    .contentWrapper.top {
       align-items: flex-end;
-      padding: ${({ theme }) => theme.padding['1/2']};
+      padding: ${({ theme }) => theme.padding.default};
+      @media (max-width: ${({ theme }) => theme.screens.xs}) {
+        padding: ${({ theme }) => theme.padding[`1/2`]};
+      }
     }
 
     .contentWrapper.top {
       align-items: flex-start;
-      padding: ${({ theme }) => theme.padding['1/2']};
     }
 
     .contentWrapper {
@@ -101,6 +106,7 @@ const HeroImage = styled.section.attrs({
         margin: 0 auto;
         text-align: center;
         justify-content: center;
+
         .cta {
           justify-self: center;
           align-items: center;
@@ -135,14 +141,16 @@ const HeroImage = styled.section.attrs({
         grid-gap: ${({ theme }) => theme.padding.default};
         padding: ${({ theme }) => theme.padding['1/2']} ${({ theme }) => theme.padding.default};
         color: #ffffff;
-        background-color: ${({ theme }) => theme.colors.header.default};
+        /* background-color: ${({ theme }) => theme.colors.header.default}; */
         border-radius: ${({ theme }) => theme.borderRadius.default};
         overflow-wrap: break-word;
         word-wrap: break-word;
         hyphens: none;
 
-        @media (max-width: ${({ theme }) => theme.screens.sm}) {
+        @media (max-width: ${({ theme }) => theme.screens.xs}) {
           padding: ${({ theme }) => theme.padding['1/2']};
+          justify-content: stretch !important;
+          width: 100%;
         }
       }
 
@@ -194,11 +202,20 @@ const HeroImage = styled.section.attrs({
 
       span.cta {
         display: flex;
-        grid-gap: ${({ theme }) => theme.padding['1/2']};
-        width: fit-content;
+        grid-gap: ${({ theme }) => theme.padding.default};
+        width: 100%;
 
-        @media (max-width: ${({ theme }) => theme.screens.sm}) {
+        @media (max-width: ${({ theme }) => theme.screens.xs}) {
+          grid-gap: ${({ theme }) => theme.padding[`1/2`]};
           flex-direction: column;
+          width: 100%;
+          span {
+            width: inherit;
+            a {
+              flex-direction: column;
+              width: inherit;
+            }
+          }
         }
       }
     }
@@ -221,6 +238,13 @@ const HeroImg = ({ slice }) => {
   const image = slice.primary.image.gatsbyImageData
   const bgImage = convertToBgImage(image)
 
+  // Set the bgColor class
+  var bgColor = getBgColor(slice.primary.background_colour)
+  const bGroundTint = getColorTint(slice.primary.background_tint)
+  bgColor === 'page'
+    ? (bgColor = 'background-' + bgColor)
+    : (bgColor = 'background-' + bgColor + '-' + bGroundTint)
+
   // Container width
   var sectionWidth = getContentWidth(slice.primary.width)
 
@@ -229,6 +253,7 @@ const HeroImg = ({ slice }) => {
 
   // Banner bGround postion
   var alignBGround = getPostionAlign(slice.primary.align_image)
+  // console.log('alignBGround = ' + alignBGround)
 
   // Banner margins
   var defaultMargin = getAutoSpacing(slice.primary.default_margin)
@@ -269,8 +294,19 @@ const HeroImg = ({ slice }) => {
     }
 
     // Overlay opacity values
-    var overlayFromOpacity = getOpacity(slice.primary.overlay_from_opacity)
-    var overlayToOpacity = getOpacity(slice.primary.overlay_to_opacity)
+    var overlayFromOpacity = slice.primary.overlay_from_opacity
+    if (overlayFromOpacity === null) {
+      overlayFromOpacity = 33
+    }
+    var overlayToOpacity = slice.primary.overlay_to_opacity
+    if (overlayToOpacity === null) {
+      overlayToOpacity = 33
+    }
+
+    overlayFromOpacity = getOpacity(overlayFromOpacity)
+    overlayToOpacity = getOpacity(overlayToOpacity)
+    // console.log('overlayFromOpacity = ' + overlayFromOpacity)
+    // console.log('overlayToOpacity = ' + overlayToOpacity)
 
     // Set overlay colors to RGBA
     overlayFrom = getHexToRGB(overlayFrom, overlayFromOpacity)
@@ -293,26 +329,26 @@ const HeroImg = ({ slice }) => {
     setHeroImageStyles()
     function setHeroImageStyles() {
       contentHeight = contentHeight + 32 * 2 // Allow for top and bottom margins
-      var heroImageInner = document.querySelector('.heroImage')
-      // var heroImageInnerAfter = window.getComputedStyle(heroImageInner, ':after')
+      var heroImageWrapper = document.querySelector('.heroImageWrapper')
+      if (heroImageWrapper) {
+        heroImageWrapper.setAttribute(
+          `style`,
+          `margin-top: ${vMarginTop};
+          margin-bottom: ${vMarginBottom}
+        `
+        )
+      }
 
+      var heroImageInner = document.querySelector('.heroImage')
       if (heroImageInner) {
         heroImageInner.setAttribute(
           `style`,
           `background-image: linear-gradient(${overlayDirection}, rgba(${overlayFrom}), rgba(${overlayTo}));
           min-height: ${sectionHeight};
           height: ${contentHeight}px;
-          width: 100%; 
-          margin-top: ${vMarginTop};
-          margin-bottom: ${vMarginBottom}
+          width: 100%;  
         `
         )
-
-        // heroImageInnerAfter.setAttribute(
-        //   `style`,
-        //   `background-position: center ${alignBGround};
-        // `
-        // )
       }
     }
     // Done
@@ -320,13 +356,13 @@ const HeroImg = ({ slice }) => {
   }, [slice, sectionHeight, alignBGround, vMarginTop, vMarginBottom])
 
   //
-  // Set background color+opacity of content
+  // Set background color + opacity of content
   useEffect(() => {
     // The specified color
     var bgroundColor = getColor(slice.primary.content_background_color)
 
     // The styled color of content bground
-    var contentWrapper = document.querySelector('.content')
+    var contentWrapper = document.querySelector('.contentWrapper .content')
     var contentBgColor = window
       .getComputedStyle(contentWrapper, null)
       .getPropertyValue('background-color')
@@ -348,8 +384,8 @@ const HeroImg = ({ slice }) => {
     // Convert background color to RGBA -  include opacity
     bgroundColor = getHexToRGB(bgroundColor, bgroundOpacity)
 
-    // console.log(contentBgColor)
-    // console.log(bgroundColor)
+    //console.log(contentBgColor)
+    //console.log(bgroundColor)
 
     // Set inline styles attrs
     contentWrapper.setAttribute('style', `background-color:rgb(${bgroundColor})`)
@@ -379,7 +415,7 @@ const HeroImg = ({ slice }) => {
   // console.log(secondaryButtonLink.raw.link_type)
 
   return (
-    <HeroImage className={`section-layout ${sectionWidth}`}>
+    <HeroImage className={`section-layout ${sectionWidth} ${bgColor}`}>
       <div className="heroImageWrapper">
         {slice.primary.image.gatsbyImageData && (
           <BackgroundImage
@@ -394,35 +430,37 @@ const HeroImg = ({ slice }) => {
           />
         )}
 
-        {(title || description || leadImage) && (
+        {(title || description || leadImage || primaryButtonLabel || secondaryButtonLabel) && (
           <div
             className={'contentWrapper ' + `${slice.primary.vertical_align_content}`.toLowerCase()}
           >
             <div className={'content ' + `${slice.primary.align_content}`.toLowerCase()}>
-              <span>
-                {leadImage && (
-                  <GatsbyImage
-                    className="leadImage"
-                    image={leadImage}
-                    alt={leadImage_alt ? leadImage_alt : 'Placeholder image'}
-                    style={{
-                      height: leadImageHeight,
-                    }}
-                  />
-                )}
+              {(title || description || leadImage) && (
+                <span>
+                  {leadImage && (
+                    <GatsbyImage
+                      className="leadImage"
+                      image={leadImage}
+                      alt={leadImage_alt ? leadImage_alt : 'Placeholder image'}
+                      style={{
+                        height: leadImageHeight,
+                      }}
+                    />
+                  )}
 
-                {title && title[0].text.length > 0 && (
-                  <span
-                    className={slice.primary.display_title === false ? 'sr-only' : undefined}
-                    style={{ color: titleColor !== null && titleColor }}
-                  >
-                    <RichText render={title} />
-                  </span>
-                )}
-                {description && description[0].text.length > 0 && (
-                  <RichText render={description} linkResolver={linkResolver} />
-                )}
-              </span>
+                  {title && title[0].text.length > 0 && (
+                    <span
+                      className={slice.primary.display_title === false ? 'sr-only' : undefined}
+                      style={{ color: titleColor !== null && titleColor }}
+                    >
+                      <RichText render={title} />
+                    </span>
+                  )}
+                  {description && description[0].text.length > 0 && (
+                    <RichText render={description} linkResolver={linkResolver} />
+                  )}
+                </span>
+              )}
 
               {(primaryButtonLabel || secondaryButtonLabel) && (
                 <span className="cta">

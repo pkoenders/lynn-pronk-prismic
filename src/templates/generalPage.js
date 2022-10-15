@@ -161,6 +161,8 @@ export const query = graphql`
               overlay_to_opacity
               overlay_direction
               align_image
+              background_colour
+              background_tint
               image {
                 gatsbyImageData(
                   layout: FULL_WIDTH
