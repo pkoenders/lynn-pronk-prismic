@@ -79,6 +79,11 @@ const Card = ({ cardItem, presentationType, item, carouselLength }) => {
                 alt={
                   image.alt ? image.alt : 'Sorry, no image description is available at this time'
                 }
+                copyright={
+                  image.copyright
+                    ? 'cc-by-nc-nd ' + new Date().getFullYear() + ' ' + image.copyright
+                    : 'cc-by-nc-nd ' + new Date().getFullYear() + ' ' + 'Lynn Pronk'
+                }
               />
             )}
             <div className="content">
@@ -107,6 +112,11 @@ const Card = ({ cardItem, presentationType, item, carouselLength }) => {
               className={'imageWrapper landscape ' + imgFormat}
               image={image.gatsbyImageData}
               alt={image.alt ? image.alt : 'Sorry, no image description is available at this time'}
+              copyright={
+                image.copyright
+                  ? 'cc-by-nc-nd ' + new Date().getFullYear() + ' ' + image.copyright
+                  : 'cc-by-nc-nd ' + new Date().getFullYear() + ' ' + 'Lynn Pronk'
+              }
             />
           )}
           <div className="content">

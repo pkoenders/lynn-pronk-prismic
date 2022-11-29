@@ -52,7 +52,6 @@ const GalleryItem = ({ currentLang, itemData }) => {
                   </a>
                 )}
               </span> */}
-
               {content && <RichText render={content} linkResolver={linkResolver} />}
 
               <div className="outTro">
@@ -65,7 +64,6 @@ const GalleryItem = ({ currentLang, itemData }) => {
                     </span>
                   </span>
                 )}
-
                 {width && height && (
                   <span className="detail">
                     <IconMaterial icon={'crop'} />
@@ -80,7 +78,73 @@ const GalleryItem = ({ currentLang, itemData }) => {
                   </span>
                 )}
               </div>
+
+              {/* <p>
+                This work is licensed under a{' '}
+                <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">
+                  Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License
+                </a>
+              </p>
+              <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">
+                <img
+                  alt="Creative Commons License"
+                  style={{ borderWidth: 0, marginTop: 16 + 'px' }}
+                  src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png"
+                />
+              </a> */}
+
+              <p xmlnsCc="http://creativecommons.org/ns#">
+                This work is licensed under{' '}
+                <a
+                  href="http://creativecommons.org/licenses/by-nc-nd/4.0/?ref=chooser-v1"
+                  target="_blank"
+                  rel="license noopener noreferrer"
+                  style={{ display: 'block' }}
+                >
+                  Attribution-NonCommercial-NoDerivatives 4.0 International
+                  <span
+                    style={{
+                      display: 'block',
+                      marginTop: 16 + 'px',
+                    }}
+                  >
+                    <img
+                      style={{
+                        height: 44 + 'px',
+                        // marginLeft: 3 + 'px',
+                        verticalAlign: 'text-bottom',
+                      }}
+                      src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"
+                    />
+                    <img
+                      style={{
+                        height: 44 + 'px',
+                        marginLeft: 4 + 'px',
+                        verticalAlign: 'text-bottom',
+                      }}
+                      src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"
+                    />
+                    <img
+                      style={{
+                        height: 44 + 'px',
+                        marginLeft: 4 + 'px',
+                        verticalAlign: 'text-bottom',
+                      }}
+                      src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1"
+                    />
+                    <img
+                      style={{
+                        height: 44 + 'px',
+                        marginLeft: 4 + 'px',
+                        verticalAlign: 'text-bottom',
+                      }}
+                      src="https://mirrors.creativecommons.org/presskit/icons/nd.svg?ref=chooser-v1"
+                    />
+                  </span>
+                </a>
+              </p>
             </div>
+
             <aside className="galleryImgs">
               {mainImage && (
                 <Zoom zoomMargin={32}>
@@ -90,6 +154,14 @@ const GalleryItem = ({ currentLang, itemData }) => {
                       galleryItem.main_image.alt
                         ? galleryItem.main_image.alt
                         : 'This image currently has no description'
+                    }
+                    copyright={
+                      galleryItem.main_image.copyright
+                        ? 'cc-by-nc-nd ' +
+                          new Date().getFullYear() +
+                          ' ' +
+                          galleryItem.main_image.copyright
+                        : 'cc-by-nc-nd ' + new Date().getFullYear() + ' ' + 'Lynn Pronk'
                     }
                   />
                 </Zoom>
@@ -102,6 +174,11 @@ const GalleryItem = ({ currentLang, itemData }) => {
                       image={item.image.gatsbyImageData}
                       alt={
                         item.image.alt ? item.image.alt : 'This image currently has no description'
+                      }
+                      copyright={
+                        item.image.copyright
+                          ? 'cc-by-nc-nd ' + new Date().getFullYear() + ' ' + item.image.copyright
+                          : 'cc-by-nc-nd ' + new Date().getFullYear() + ' ' + 'Lynn Pronk'
                       }
                       key={index}
                     />

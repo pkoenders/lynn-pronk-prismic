@@ -73,6 +73,14 @@ const GalleryItem = ({ listStyle, thisItem, index, listLength, animateScroll }) 
                     // tabIndex="0"
                     image={content.main_image.gatsbyImageData}
                     alt={content.main_image.alt ? content.main_image.alt : content.title.text}
+                    copyright={
+                      content.main_image.copyright
+                        ? 'cc-by-nc-nd ' +
+                          new Date().getFullYear() +
+                          ' ' +
+                          content.main_image.copyright
+                        : 'cc-by-nc-nd ' + new Date().getFullYear() + ' ' + 'Lynn Pronk'
+                    }
                   />
                   <span className="openLightBox">
                     <IconMaterial icon={'open_in_full'} />

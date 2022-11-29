@@ -295,6 +295,7 @@ export const query = graphql`
               }
               image {
                 alt
+                copyright
                 gatsbyImageData(
                   width: 575
                   layout: CONSTRAINED

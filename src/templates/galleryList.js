@@ -116,16 +116,24 @@ export const query = graphql`
 
                       main_image {
                         alt
+                        copyright
                         gatsbyImageData(
                           width: 992
                           layout: CONSTRAINED
                           placeholder: BLURRED
                           imgixParams: {
+                            fit: "crop"
+                            w: 992
                             q: 90
                             fm: "jpg, avif, webp"
-                            nr: 100
+                            #nr: 100
                             dpr: 2
-                            auto: "compress,format"
+                            auto: "compress, format"
+                            mark: "https://images.prismic.io/lynn-pronk/fa5b4717-db25-4af4-b1ac-860e556f546a_logo-lynn-pronk.png"
+                            markfit: "clip"
+                            markscale: 20
+                            markalign: "top, left"
+                            markpad: 32
                           }
                         )
                       }

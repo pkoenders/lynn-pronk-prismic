@@ -441,6 +441,57 @@ const GalleryList = ({ currentLang, pageIntro, dataList }) => {
           )}
 
           {hasMore ? <button onClick={handleLoadMore}>Load More</button> : <p>No more results</p>}
+
+          <p xmlnsCc="http://creativecommons.org/ns#">
+            All work is licensed under{' '}
+            <a
+              href="http://creativecommons.org/licenses/by-nc-nd/4.0/?ref=chooser-v1"
+              target="_blank"
+              rel="license noopener noreferrer"
+              // style={{ display: 'block' }}
+            >
+              Attribution-NonCommercial-NoDerivatives 4.0 International
+              <span
+                style={{
+                  display: 'block',
+                  marginTop: 16 + 'px',
+                }}
+              >
+                <img
+                  style={{
+                    height: 44 + 'px',
+                    // marginLeft: 3 + 'px',
+                    verticalAlign: 'text-bottom',
+                  }}
+                  src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"
+                />
+                <img
+                  style={{
+                    height: 44 + 'px',
+                    marginLeft: 3 + 'px',
+                    verticalAlign: 'text-bottom',
+                  }}
+                  src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"
+                />
+                <img
+                  style={{
+                    height: 44 + 'px',
+                    marginLeft: 4 + 'px',
+                    verticalAlign: 'text-bottom',
+                  }}
+                  src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1"
+                />
+                <img
+                  style={{
+                    height: 44 + 'px',
+                    marginLeft: 4 + 'px',
+                    verticalAlign: 'text-bottom',
+                  }}
+                  src="https://mirrors.creativecommons.org/presskit/icons/nd.svg?ref=chooser-v1"
+                />
+              </span>
+            </a>
+          </p>
         </ListWrapper>
       </PageLayout>
     </>

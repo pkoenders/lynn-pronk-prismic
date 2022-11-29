@@ -55,22 +55,29 @@ const PageBody = styled.article`
         grid-gap: ${({ theme }) => theme.margin['1/4']};
 
         time {
-          color: ${({ theme }) => theme.colors.page[800]};
+          /* color: ${({ theme }) => theme.colors.page[800]}; */
+          color: ${({ theme }) => theme.colors.page.default};
           font-size: ${({ theme }) => theme.fontSize.sm};
         }
 
         .detail {
+          /* color: #fff; */
+          color: ${({ theme }) => theme.colors.page.default};
           display: flex;
           flex-direction: row;
           grid-gap: ${({ theme }) => theme.margin['1/4']};
           align-items: center;
+          /* i {
+            color: ${({ theme }) => theme.colors.page.default};
+          } */
         }
       }
       .outTro {
         font-size: ${({ theme }) => theme.fontSize.sm};
         color: ${({ theme }) => theme.colors.page[700]};
         margin-top: ${({ theme }) => theme.margin.default};
-        margin-bottom: ${({ theme }) => theme.margin['1/4']};
+        /* margin-bottom: ${({ theme }) => theme.margin['1/4']}; */
+        margin-bottom: ${({ theme }) => theme.margin.default};
       }
 
       > a {

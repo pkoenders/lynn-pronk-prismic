@@ -152,6 +152,7 @@ export const query = graphql`
             height
             main_image {
               alt
+              copyright
               gatsbyImageData(
                 breakpoints: [768, 992, 1200, 1366]
                 layout: CONSTRAINED
@@ -159,11 +160,16 @@ export const query = graphql`
                 imgixParams: {
                   q: 100
                   fm: "jpg, avif, webp"
-                  nr: 0
+                  # nr: 0
                   nrs: 50
                   dpr: 2
                   auto: "compress, format"
                   trim: "auto"
+                  mark: "https://images.prismic.io/lynn-pronk/fa5b4717-db25-4af4-b1ac-860e556f546a_logo-lynn-pronk.png"
+                  markfit: "clip"
+                  markscale: 20
+                  markalign: "top, left"
+                  markpad: 32
                 }
               )
               #alt
