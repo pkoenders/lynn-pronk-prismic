@@ -15,6 +15,9 @@ const CreativeCommonsWrapper = styled.div`
     margin-top: ${({ theme }) => theme.margin['1/2']};
     img {
       height: 44px;
+      @media (max-width: ${({ theme }) => theme.screens.sm}) {
+        height: 24px;
+      }
     }
   }
 `
