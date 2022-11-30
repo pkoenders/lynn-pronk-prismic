@@ -57,7 +57,7 @@ const PageBody = styled.article`
         time {
           /* color: ${({ theme }) => theme.colors.page[800]}; */
           color: ${({ theme }) => theme.colors.page.default};
-          font-size: ${({ theme }) => theme.fontSize.sm};
+          /* font-size: ${({ theme }) => theme.fontSize.sm}; */
         }
 
         .detail {
@@ -73,7 +73,7 @@ const PageBody = styled.article`
         }
       }
       .outTro {
-        font-size: ${({ theme }) => theme.fontSize.sm};
+        /* font-size: ${({ theme }) => theme.fontSize.sm}; */
         color: ${({ theme }) => theme.colors.page[700]};
         margin-top: ${({ theme }) => theme.margin.default};
         /* margin-bottom: ${({ theme }) => theme.margin['1/4']}; */
