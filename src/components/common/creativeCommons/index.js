@@ -3,9 +3,12 @@ import React from 'react'
 import styled from 'styled-components'
 
 const CreativeCommonsWrapper = styled.div`
-  border: 1px solid ${({ theme }) => theme.colors.page[100]};
+  color: ${({ theme }) => theme.colors.page[700]};
+  font-size: ${({ theme }) => theme.fontSize.sm};
+  border-top: 1px solid ${({ theme }) => theme.colors.page[100]};
   border-radius: ${({ theme }) => theme.borderRadius.sm};
-  padding: ${({ theme }) => theme.padding['1/2']};
+  /* padding: ${({ theme }) => theme.padding['1/2']}; */
+  padding-top: ${({ theme }) => theme.padding['1/2']};
   width: fit-content;
 
   span {
