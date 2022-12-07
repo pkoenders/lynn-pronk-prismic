@@ -104,7 +104,8 @@ const GalleryList = ({ currentLang, pageIntro, dataList }) => {
       : updateLayoutStlye(layoutStyle)
   }, [currentLayoutStyle, layoutStyle])
 
-  // SLR Lightbox settings
+  // SRL Lightbox settings
+  // https://www.npmjs.com/package/simple-react-lightbox
   const options = {
     settings: {
       autoplaySpeed: 0,
@@ -129,6 +130,19 @@ const GalleryList = ({ currentLang, pageIntro, dataList }) => {
     },
     caption: {
       showCaption: false,
+    },
+    buttons: {
+      // backgroundColor: 'rgba(30,30,36,0.8)',
+      // iconColor: 'rgba(255, 255, 255, 0.8)',
+      // iconPadding: '10px',
+      // showAutoplayButton: true,
+      // showCloseButton: true,
+      showDownloadButton: false,
+      // showFullscreenButton: true,
+      // showNextButton: true,
+      // showPrevButton: true,
+      // showThumbnailsButton: true,
+      size: '40px',
     },
   }
 
