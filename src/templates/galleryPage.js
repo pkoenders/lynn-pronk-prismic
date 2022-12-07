@@ -165,11 +165,11 @@ export const query = graphql`
                   dpr: 2
                   auto: "compress, format"
                   trim: "auto"
-                  mark: "https://images.prismic.io/lynn-pronk/fa5b4717-db25-4af4-b1ac-860e556f546a_logo-lynn-pronk.png"
-                  markfit: "clip"
-                  markscale: 20
-                  markalign: "top, left"
-                  markpad: 32
+                  #mark: "https://images.prismic.io/lynn-pronk/fa5b4717-db25-4af4-b1ac-860e556f546a_logo-lynn-pronk.png"
+                  #markfit: "clip"
+                  #markscale: 20
+                  #markalign: "top, left"
+                  #markpad: 32
                 }
               )
               #alt
