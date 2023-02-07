@@ -5,8 +5,8 @@ import styled from 'styled-components'
 const CreativeCommonsWrapper = styled.div`
   color: ${({ theme }) => theme.colors.page[700]};
   font-size: ${({ theme }) => theme.fontSize.sm};
-  border-top: 1px solid ${({ theme }) => theme.colors.page[100]};
-  border-bottom: 1px solid ${({ theme }) => theme.colors.page[100]};
+  /* border-top: 1px solid ${({ theme }) => theme.colors.page[100]}; */
+  /* border-bottom: 1px solid ${({ theme }) => theme.colors.page[100]}; */
   /* border-radius: ${({ theme }) => theme.borderRadius.sm}; */
   /* padding: ${({ theme }) => theme.padding['1/2']}; */
 
