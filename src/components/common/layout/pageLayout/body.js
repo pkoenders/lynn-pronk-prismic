@@ -105,10 +105,11 @@ const PageBody = styled.article`
     .galleryImgs > div {
       display: flex;
       flex-direction: column;
-      grid-gap: ${({ theme }) => theme.padding['4xl']};
-      margin-bottom: ${({ theme }) => theme.padding['4xl']};
+
+      margin-bottom: ${({ theme }) => theme.padding['3xl']};
       flex-grow: 1;
       div {
+        grid-gap: ${({ theme }) => theme.padding['4xl']};
         display: flex;
         border: 1px solid ${({ theme }) => theme.colors.card[100]};
         box-shadow: ${({ theme }) => theme.boxShadow.xl};

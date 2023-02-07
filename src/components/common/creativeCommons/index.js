@@ -13,6 +13,7 @@ const CreativeCommonsWrapper = styled.div`
   padding: ${({ theme }) => theme.padding['1/2']} 0;
   width: fit-content;
   width: 100%;
+  margin-bottom: 0 !important;
 
   span {
     display: flex;

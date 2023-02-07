@@ -39,7 +39,7 @@ const SortListWrapper = styled.div`
     min-width: 160px;
     position: relative;
     /* background-color: ${({ theme }) => theme.colors.page.bground.default}; */
-    border: 1px solid ${({ theme }) => theme.colors.card[300]};
+    border: 1px solid ${({ theme }) => theme.colors.card[400]};
     border-radius: ${({ theme }) => theme.borderRadius.sm};
 
     button {
@@ -51,7 +51,7 @@ const SortListWrapper = styled.div`
       z-index: 100;
 
       /* background-color: #fff; */
-      background-color: ${({ theme }) => theme.colors.card[100]};
+      background-color: ${({ theme }) => theme.colors.card[200]};
       padding: ${({ theme }) => theme.padding['1/4']} ${({ theme }) => theme.padding['1/2']};
       i {
         margin-right: -${({ theme }) => theme.padding['1/8']};
