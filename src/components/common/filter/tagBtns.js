@@ -36,7 +36,7 @@ const ListTagBtnsWrapper = styled.div`
 
     /* cursor: pointer; */
     user-select: none;
-    background-color: ${({ theme }) => theme.colors.tertiary[100]};
+    background-color: ${({ theme }) => theme.colors.tertiary[700]};
     /* background-color: ${({ theme }) => theme.colors.tertiary[200]}; */
     color: ${({ theme }) => theme.colors.pageHold.default};
     /* border: 1px solid ${({ theme }) => theme.colors.pageHold[300]}; */
@@ -142,8 +142,8 @@ const ListTagBtnsWrapper = styled.div`
     /* border: 1px solid ${({ theme }) => theme.colors.tertiary[400]}; */
     border: 1px solid transparent;
     border: 1px solid ${({ theme }) => theme.colors.pageHold[300]};
-    border-radius: ${({ theme }) => theme.borderRadius.sm};
-    box-shadow: ${({ theme }) => theme.boxShadow.default};
+    border-radius: ${({ theme }) => theme.borderRadius.default};
+    /* box-shadow: ${({ theme }) => theme.boxShadow.default}; */
   }
 
   .tagButton:hover {
@@ -154,8 +154,9 @@ const ListTagBtnsWrapper = styled.div`
   .tagButton[aria-checked='true'] {
     font-variation-settings: 'GRAD' 100;
     background-color: ${({ theme }) => theme.colors.tertiary.default};
-    border: 1px solid transparent;
+    /* border: 1px solid transparent; */
     box-shadow: none;
+    /* box-shadow: ${({ theme }) => theme.boxShadow.default}; */
   }
 `
 
