@@ -738,7 +738,7 @@ class Header extends Component {
     // const disclosureNav = document.querySelector('.disclosure-nav')
     const headerNavExpaned = document.querySelector('.secondaryNavList')
     const toggleHamburger = document.querySelector('.hamburger')
-    const closeHamburger = document.querySelector('.closeMenu')
+    const closeHamburger = document.querySelectorAll('.closeMenu')
     const brandLink = document.querySelector('.brand')
     // const brandMobile = document.querySelector('.mobile')
 
@@ -802,9 +802,16 @@ class Header extends Component {
       !!headerNav.classList.contains('open') ? closeHamburgerNav() : openHamburgerNav()
     })
 
-    closeHamburger.addEventListener('click', function () {
-      closeHamburgerNav()
+    document.querySelectorAll('.closeMenu').forEach((item) => {
+      item.addEventListener('click', (event) => {
+        //handle click
+        closeHamburgerNav()
+      })
     })
+
+    // closeHamburger.addEventListeners('click', function () {
+    //   closeHamburgerNav()
+    // })
 
     skipLink.addEventListener('click', function () {
       closeHamburgerNav()
@@ -820,7 +827,7 @@ class Header extends Component {
       toggleHamburger.setAttribute('aria-label', 'Close mobile navigation')
       toggleHamburger.setAttribute('aria-expanded', 'true')
       toggleHamburger.setAttribute('aria-pressed', 'true')
-      closeHamburger.classList.remove('hide')
+      // closeHamburger.classList.remove('hide')
     }
 
     function closeHamburgerNav() {
@@ -839,7 +846,7 @@ class Header extends Component {
       toggleHamburger.setAttribute('aria-label', 'Open mobile navigation')
       toggleHamburger.setAttribute('aria-expanded', 'false')
       toggleHamburger.setAttribute('aria-pressed', 'false')
-      closeHamburger.classList.add('hide')
+      // closeHamburger.classList.add('hide')
       headerNavExpaned && headerNavExpaned.setAttribute('style', 'display: none;')
     }
 
@@ -925,7 +932,7 @@ class Header extends Component {
               </Link>
             </li>
 
-            <li className="home">
+            <li className="home hide closeMenu">
               <Link
                 to={
                   this.props.currentPrefix === '/'
