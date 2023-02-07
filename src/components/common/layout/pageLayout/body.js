@@ -37,10 +37,12 @@ const PageBody = styled.article`
     .galleryContent {
       display: flex;
       flex-direction: column;
+      min-width: 33%;
       max-width: 33%;
 
       @media (max-width: ${({ theme }) => theme.screens.md}) {
-        max-width: 50%;
+        min-width: 33%;
+        max-width: 33%;
       }
       @media (max-width: ${({ theme }) => theme.screens.sm}) {
         flex-direction: column;
