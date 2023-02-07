@@ -100,10 +100,11 @@ const PageBody = styled.article`
       }
     }
 
-    .galleryImgs {
+    .galleryImgs > div {
       display: flex;
       flex-direction: column;
       grid-gap: ${({ theme }) => theme.padding['4xl']};
+      margin-bottom: ${({ theme }) => theme.padding['4xl']};
       flex-grow: 1;
       div {
         display: flex;

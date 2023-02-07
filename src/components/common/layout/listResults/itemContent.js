@@ -260,7 +260,7 @@ const ItemContent = styled.article`
         /* box-shadow: ${({ theme }) => theme.boxShadow.lg}; */
         i {
           transform: scale(0.77);
-          color: ${({ theme }) => theme.colors.primary.default};
+          /* color: ${({ theme }) => theme.colors.primary.default}; */
         }
       }
     }

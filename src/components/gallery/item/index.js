@@ -82,48 +82,53 @@ const GalleryItem = ({ currentLang, itemData }) => {
                   </span>
                 )}
               </div>
-              <CreativeCommons />
+              {/* <CreativeCommons /> */}
             </div>
 
             <aside className="galleryImgs">
-              {mainImage && (
-                <Zoom zoomMargin={32}>
-                  <GatsbyImage
-                    image={mainImage}
-                    alt={
-                      galleryItem.main_image.alt
-                        ? galleryItem.main_image.alt
-                        : 'This image currently has no description'
-                    }
-                    copyright={
-                      galleryItem.main_image.copyright
-                        ? 'cc-by-nc-nd ' +
-                          new Date().getFullYear() +
-                          ' ' +
-                          galleryItem.main_image.copyright
-                        : 'cc-by-nc-nd ' + new Date().getFullYear() + ' ' + 'Lynn Pronk'
-                    }
-                  />
-                </Zoom>
-              )}
-
-              {galleryImageRoll !== undefined &&
-                galleryImageRoll.items.map((item, index) => (
+              <div>
+                {mainImage && (
                   <Zoom zoomMargin={32}>
                     <GatsbyImage
-                      image={item.image.gatsbyImageData}
+                      image={mainImage}
                       alt={
-                        item.image.alt ? item.image.alt : 'This image currently has no description'
+                        galleryItem.main_image.alt
+                          ? galleryItem.main_image.alt
+                          : 'This image currently has no description'
                       }
                       copyright={
-                        item.image.copyright
-                          ? 'cc-by-nc-nd ' + new Date().getFullYear() + ' ' + item.image.copyright
-                          : 'cc-by-nc-nd ' + new Date().getFullYear() + ' ' + 'Lynn Pronk'
+                        galleryItem.main_image.copyright
+                          ? 'cc by-nc-nd ' +
+                            new Date().getFullYear() +
+                            ' ' +
+                            galleryItem.main_image.copyright
+                          : 'cc by-nc-nd ' + new Date().getFullYear() + ' ' + 'Lynn Pronk'
                       }
-                      key={index}
                     />
                   </Zoom>
-                ))}
+                )}
+
+                {galleryImageRoll !== undefined &&
+                  galleryImageRoll.items.map((item, index) => (
+                    <Zoom zoomMargin={32}>
+                      <GatsbyImage
+                        image={item.image.gatsbyImageData}
+                        alt={
+                          item.image.alt
+                            ? item.image.alt
+                            : 'This image currently has no description'
+                        }
+                        copyright={
+                          item.image.copyright
+                            ? 'cc by-nc-nd ' + new Date().getFullYear() + ' ' + item.image.copyright
+                            : 'cc by-nc-nd ' + new Date().getFullYear() + ' ' + 'Lynn Pronk'
+                        }
+                        key={index}
+                      />
+                    </Zoom>
+                  ))}
+              </div>
+              <CreativeCommons />
             </aside>
           </div>
         </PageBody>
