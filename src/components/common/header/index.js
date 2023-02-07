@@ -147,6 +147,13 @@ const HeaderWrapper = styled.header`
       }
     }
 
+    .home {
+      display: none;
+      @media (max-width: ${({ theme }) => theme.screens.sm}) {
+        display: flex;
+      }
+    }
+
     // Mobile nav
     > ul {
       justify-self: start;
@@ -915,6 +922,20 @@ class Header extends Component {
                 className="l1"
               >
                 <Brand currentLang={this.props.currentLang} />
+              </Link>
+            </li>
+
+            <li className="home">
+              <Link
+                to={
+                  this.props.currentPrefix === '/'
+                    ? this.props.currentPrefix
+                    : `${this.props.currentPrefix}/`
+                }
+                aria-label={i18n[this.props.currentLang].linkToHomepage}
+                className="l1"
+              >
+                Home
               </Link>
             </li>
 
