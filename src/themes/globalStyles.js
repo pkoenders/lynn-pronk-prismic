@@ -87,6 +87,11 @@ export const GlobalStyles = createGlobalStyle`
   
   section.light {
     color: ${({ theme }) => theme.colors.pageHold.default};
+
+    a {
+       color: ${({ theme }) => theme.colors.accent.lightBground.default};
+    }
+
     .carousel > * {
       color: ${({ theme }) => theme.colors.pageHold.default};
     }
@@ -96,10 +101,8 @@ export const GlobalStyles = createGlobalStyle`
   section.dark {
     color: ${({ theme }) => theme.colors.pageHold[100]};
 
-  
-    
-    a {
-       /* color: ${({ theme }) => theme.colors.primary[100]}; */
+   a {
+       color: ${({ theme }) => theme.colors.accent.darkBground.default};
     }
 
     form {
