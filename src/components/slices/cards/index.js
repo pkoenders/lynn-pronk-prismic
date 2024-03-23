@@ -112,8 +112,8 @@ const CardsWrapper = styled.section`
       grid-gap: ${({ theme }) => theme.padding['1/2']};
 
       .item {
-        width: ${({ theme }) => theme.padding['1/2']};
-        height: ${({ theme }) => theme.padding['1/2']};
+        width: ${({ theme }) => theme.padding['2/3']};
+        height: ${({ theme }) => theme.padding['2/3']};
         background-color: ${({ theme }) => theme.colors.page.default};
         border-radius: ${({ theme }) => theme.borderRadius.sm};
       }

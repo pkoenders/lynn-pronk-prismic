@@ -196,6 +196,7 @@ export const themeBase = {
 
   padding: {
     default: '32px',
+    '2/3': '24px',
     '1/2': '16px',
     '1/4': '8px',
     '1/8': '4px',
