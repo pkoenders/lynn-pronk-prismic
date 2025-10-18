@@ -143,7 +143,8 @@ const HeaderWrapper = styled.header`
       }
 
       svg {
-        width: auto;
+        //width: auto;
+        width: 100%;
       }
     }
 
