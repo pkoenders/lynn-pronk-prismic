@@ -41,14 +41,14 @@ const Switcher = styled.button`
 
 const ThemeSwitcher = ({ changeTheme, currTheme }) => {
   return (
-    <Switcher type="button" onClick={changeTheme}>
+    <Switcher className="themeSwitcher" type="button" onClick={changeTheme}>
       {currTheme ? (
         <span aria-label="Light mode" role="img">
           Light<span>🌞</span>
         </span>
       ) : (
         <span aria-label="Dark mode" role="img">
-          <span className="dark">🌜</span>Dark
+          Dark<span className="dark">🌜</span>
         </span>
       )}
     </Switcher>
