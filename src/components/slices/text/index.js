@@ -28,7 +28,7 @@ import styled from 'styled-components'
 
 const TextBlock = styled.section`
   padding: 0 ${({ theme }) => theme.padding['1/2']};
-  color: ${({ theme }) => theme.colors.page.default} !important;
+  //color: ${({ theme }) => theme.colors.page.default};
   //color: yellow;
 
   > div {

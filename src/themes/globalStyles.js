@@ -28,7 +28,7 @@ export const GlobalStyles = createGlobalStyle`
      font-size: 106.3%; /* 17px */
     //font-size: 112.5%; /* 18px */
 
-    color: ${({ theme }) => theme.colors.page.default};
+    color: ${({ theme }) => theme.colors.page.default} !important;
     font-feature-settings: 'kern', 'liga', 'clig', 'calt';
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
