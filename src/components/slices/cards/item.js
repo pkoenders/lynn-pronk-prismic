@@ -16,7 +16,6 @@ import IconMaterial from '/src/components/common/icons/material'
 
 import styled from 'styled-components'
 const CardsWrapper = styled.div`
-  color: inherit;
   a,
   a:link,
   a:hover,

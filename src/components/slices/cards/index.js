@@ -32,6 +32,8 @@ import styled from 'styled-components'
 const CardsWrapper = styled.section`
   padding: 0 ${({ theme }) => theme.padding['1/2']};
 
+  color: ${({ theme }) => theme.colors.page.default};
+
   @media (max-width: ${({ theme }) => theme.screens.sm}) {
     padding-top: 0 !important;
     padding-bottom: ${({ theme }) => theme.padding.default} !important;
