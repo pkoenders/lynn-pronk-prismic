@@ -16,7 +16,9 @@ const LayoutWrapper = styled.div`
   width: 100%;
   flex-direction: column;
   min-height: 100vh;
+  background-color: ${({ theme }) => theme.colors.header.default};
   background-color: ${({ theme }) => theme.colors.page.bground.default};
+
   transition: background-color 0.2s ease-in;
 
   & .layoutInner {
@@ -126,8 +128,8 @@ class Layout extends React.Component {
             currentPrefix={currentPrefix}
             currentPath={currentPath}
             primaryNav={primaryNav}
-            // changeTheme={this.changeTheme}
-            // currTheme={isLightTheme}
+            changeTheme={this.changeTheme}
+            currTheme={isLightTheme}
           />
 
           <div className="layoutInner">
