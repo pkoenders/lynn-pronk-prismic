@@ -126,8 +126,8 @@ class Layout extends React.Component {
             currentPrefix={currentPrefix}
             currentPath={currentPath}
             primaryNav={primaryNav}
-            changeTheme={this.changeTheme}
-            currTheme={isLightTheme}
+            // changeTheme={this.changeTheme}
+            // currTheme={isLightTheme}
           />
 
           <div className="layoutInner">
