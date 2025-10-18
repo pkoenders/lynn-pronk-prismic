@@ -89,7 +89,8 @@ export const GlobalStyles = createGlobalStyle`
     color: ${({ theme }) => theme.colors.pageHold.default};
 
     a {
-       color: ${({ theme }) => theme.colors.accent.lightBground.default};
+       /* color: ${({ theme }) => theme.colors.accent.lightBground.default}; */
+        color: ${({ theme }) => theme.colors.pageHold.default};
     }
 
     .carousel > * {
@@ -102,7 +103,7 @@ export const GlobalStyles = createGlobalStyle`
     color: ${({ theme }) => theme.colors.pageHold[100]};
 
    a {
-       color: ${({ theme }) => theme.colors.accent.darkBground.default};
+       ${({ theme }) => theme.colors.accent.darkBground.default};
     }
 
     form {
